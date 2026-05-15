@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LabTask6</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+
+        .container{
+            width: 600px;
+            margin: 20px auto;
+            border: 1px solid black;
+            border-radius: 15px;
+            padding: 40px 60px;
+        }
+
+       
+        .textbox{
+            display: block;
+            width: 250px;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            background-color: #ddd;
+            font-size: 20px;
+        }
+
+        
+        .survey{
+            margin-top: 15px;
+        }
+
+        .survey p{
+            width: 350px;
+            display: inline-block;
+            vertical-align: middle;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .survey button{
+            width: 50px;
+            height: 40px;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        
+        .google{
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .google img{
+            width: 220px;
+        }
+
+        .search{
+            width: 480px;
+            padding: 15px;
+            border-radius: 30px;
+            border: none;
+            background-color: #ddd;
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+       
+        .signup{
+            margin-top: 30px;
+        }
+
+        .signup input{
+            width: 230px;
+            padding: 12px;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            background-color: #ddd;
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .signup .lastname{
+            margin-left: 10px;
+        }
+
+        .signup .email{
+            width: 490px;
+        }
+
+        .signup button{
+            width: 520px;
+            padding: 12px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        
+        .uber{
+            margin-top: 30px;
+        }
+
+        .uber h1{
+            font-size: 24px;
+        }
+
+        .uber input{
+            width: 490px;
+            padding: 14px;
+            margin-bottom: 12px;
+            border: none;
+            background-color: #ddd;
+            font-size: 18px;
+        }
+
+        .request{
+            width: 200px;
+            padding: 12px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        .schedule{
+            width: 220px;
+            padding: 12px;
+            background-color: #ddd;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-left: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+      
+        <input type="text" placeholder="Name" class="textbox">
+
+        <input type="email" placeholder="Email" class="textbox">
+
+       
+        <div class="survey">
+
+            <p>
+                Thanks for chatting with our customer support.
+                Would you like to take our quick survey?
+            </p>
+
+            <button>Yes</button>
+            <button>No</button>
+
+        </div>
+
+        
+        <div class="google">
+
+            <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+
+            <br>
+
+            <input type="text"
+                   placeholder="Search Google or type a URL"
+                   class="search">
+
+        </div>
+
+       
+        <div class="signup">
+
+            <input type="text"
+                   placeholder="First name">
+
+            <input type="text"
+                   placeholder="Last name"
+                   class="lastname">
+
+            <br>
+
+            <input type="email"
+                   placeholder="Email"
+                   class="email">
+
+            <br>
+
+            <button>Sign Up</button>
+
+        </div>
+
+        
+        <div class="uber">
+
+            <h1>Request a ride now</h1>
+
+            <input type="text"
+                   placeholder="Enter pickup location">
+
+            <br>
+
+            <input type="text"
+                   placeholder="Enter destination">
+
+            <br>
+
+            <button class="request">Request now</button>
+
+            <button class="schedule">Schedule for later</button>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
