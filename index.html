@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nick Walter M. Lumibao | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #050505;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: #00ff88;
+      color: black;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+    }
+
+    nav h1 {
+      color: #00ff88;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      transition: 0.3s ease;
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      color: #00ff88;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 120px 8% 80px;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: radial-gradient(circle at center, rgba(0,255,136,0.15), transparent 40%);
+    }
+
+    .hero h2 {
+      font-size: 4rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero h2 span {
+      color: #00ff88;
+    }
+
+    .hero p {
+      max-width: 700px;
+      color: #cfcfcf;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .btn {
+      margin-top: 35px;
+      display: inline-block;
+      padding: 14px 35px;
+      border-radius: 30px;
+      background: #00ff88;
+      color: black;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s ease;
+      box-shadow: 0 0 20px rgba(0,255,136,0.4);
+    }
+
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(0,255,136,0.7);
+    }
+
+    .section-title {
+      font-size: 2.7rem;
+      margin-bottom: 50px;
+      text-align: center;
+      color: #00ff88;
+    }
+
+    .about-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-box {
+      background: #111111;
+      padding: 35px;
+      border-radius: 20px;
+      border: 1px solid rgba(0,255,136,0.15);
+      transition: 0.3s ease;
+    }
+
+    .about-box:hover {
+      transform: translateY(-8px);
+      border-color: #00ff88;
+      box-shadow: 0 0 25px rgba(0,255,136,0.2);
+    }
+
+    .about-box p {
+      color: #d4d4d4;
+      line-height: 1.9;
+    }
+
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .skill-card {
+      background: #111111;
+      padding: 35px;
+      border-radius: 18px;
+      text-align: center;
+      border: 1px solid rgba(0,255,136,0.1);
+      transition: 0.3s ease;
+    }
+
+    .skill-card:hover {
+      transform: scale(1.05);
+      border-color: #00ff88;
+      box-shadow: 0 0 20px rgba(0,255,136,0.25);
+    }
+
+    .skill-card h3 {
+      color: #00ff88;
+      margin-bottom: 10px;
+    }
+
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: #111111;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: 0.3s ease;
+      border: 1px solid rgba(0,255,136,0.1);
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      border-color: #00ff88;
+      box-shadow: 0 0 25px rgba(0,255,136,0.2);
+    }
+
+    .project-image {
+      height: 180px;
+      background: linear-gradient(135deg, #00ff88, #003d21);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: black;
+    }
+
+    .project-content {
+      padding: 25px;
+    }
+
+    .project-content h3 {
+      margin-bottom: 10px;
+      color: #00ff88;
+    }
+
+    .project-content p {
+      color: #d0d0d0;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .contact-container {
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .contact-container p {
+      color: #d0d0d0;
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      padding: 14px 28px;
+      border: 1px solid #00ff88;
+      border-radius: 30px;
+      text-decoration: none;
+      color: #00ff88;
+      transition: 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background: #00ff88;
+      color: black;
+      box-shadow: 0 0 20px rgba(0,255,136,0.4);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      border-top: 1px solid rgba(0,255,136,0.15);
+      color: #bdbdbd;
+      background: #090909;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .fade-up.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>Nick Lumibao</h1>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="fade-up">
+      <h2>Hello, I'm <span>Nick Walter M. Lumibao</span></h2>
+      <p>
+        I am an aspiring game developer and web developer from Arayat, Pampanga.
+        I enjoy watching movies, anime, and playing games. Someday, I would love to
+        develop my own games and create amazing digital experiences.
+      </p>
+
+      <a href="#projects" class="btn">View Projects</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title fade-up">About Me</h2>
+
+    <div class="about-container">
+      <div class="about-box fade-up">
+        <p>
+          My name is Nick Walter M. Lumibao and I am currently learning web development
+          and programming. I am passionate about technology and enjoy exploring new
+          skills related to coding, game development, and animation.
+        </p>
+      </div>
+
+      <div class="about-box fade-up">
+        <p>
+          I believe that learning technology opens many opportunities for creativity
+          and innovation. My dream is to become a successful developer and build games
+          and applications that people can enjoy.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title fade-up">My Skills</h2>
+
+    <div class="skills-container">
+      <div class="skill-card fade-up">
+        <h3>HTML</h3>
+        <p>Creating structured and responsive web pages.</p>
+      </div>
+
+      <div class="skill-card fade-up">
+        <h3>CSS</h3>
+        <p>Designing modern and visually appealing layouts.</p>
+      </div>
+
+      <div class="skill-card fade-up">
+        <h3>JavaScript</h3>
+        <p>Adding interactive functionality to websites.</p>
+      </div>
+
+      <div class="skill-card fade-up">
+        <h3>Python</h3>
+        <p>Learning programming fundamentals and logic building.</p>
+      </div>
+
+      <div class="skill-card fade-up">
+        <h3>Basic Animation</h3>
+        <p>Creating simple animations and visual effects.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title fade-up">Projects</h2>
+
+    <div class="projects-container">
+
+      <div class="project-card fade-up">
+        <div class="project-image">01</div>
+        <div class="project-content">
+          <h3>Project 1</h3>
+          <p>Add your project description here later.</p>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="project-image">02</div>
+        <div class="project-content">
+          <h3>Project 2</h3>
+          <p>Add your project description here later.</p>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="project-image">03</div>
+        <div class="project-content">
+          <h3>Project 3</h3>
+          <p>Add your project description here later.</p>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="project-image">04</div>
+        <div class="project-content">
+          <h3>Project 4</h3>
+          <p>Add your project description here later.</p>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="project-image">05</div>
+        <div class="project-content">
+          <h3>Project 5</h3>
+          <p>Add your project description here later.</p>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="project-image">06</div>
+        <div class="project-content">
+          <h3>Project 6</h3>
+          <p>Add your project description here later.</p>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="project-image">07</div>
+        <div class="project-content">
+          <h3>Project 7</h3>
+          <p>Add your project description here later.</p>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="project-image">08</div>
+        <div class="project-content">
+          <h3>Project 8</h3>
+          <p>Add your project description here later.</p>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="project-image">09</div>
+        <div class="project-content">
+          <h3>Project 9</h3>
+          <p>Add your project description here later.</p>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="project-image">10</div>
+        <div class="project-content">
+          <h3>Project 10</h3>
+          <p>Add your project description here later.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title fade-up">Contact Me</h2>
+
+    <div class="contact-container fade-up">
+      <p>
+        Feel free to contact me through my social media account.
+        I am always open to learning opportunities and collaboration.
+      </p>
+
+      <div class="social-links">
+        <a href="https://web.facebook.com/nickwalter.lumibao" target="_blank">Facebook</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Nick Walter M. Lumibao | WS101 Portfolio</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    });
+
+    document.querySelectorAll('.fade-up').forEach((el) => {
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
